@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+import moonIcon from '../icons/moon.png'
 
 const Login = () => {
   const emailRef = useRef();
@@ -19,15 +20,16 @@ const Login = () => {
       await login(emailRef.current.value, passwordRef.current.value);
       navigate("/dashboard");
     } catch {
-      setError("failed to sign in");
+      setError("Nie udało się zalogować");
     }
     setLoading(false);
   }
 
   return (
-    <>
-      {error && <div>{error}</div>}
-      <form onSubmit={handleSubmit}>
+    <div className="login">
+      <img className="icon-big" src={moonIcon} />
+      <div className="logo-big">Witch mode</div>
+      <form className="login-form" onSubmit={handleSubmit}>
         <label>
           Email
           <input id="email" ref={emailRef} required placeholder="Email" />
@@ -43,15 +45,16 @@ const Login = () => {
           />
         </label>
 
-        <button type="submit" disabled={loading}>
+        <button className="button" type="submit" disabled={loading}>
           Zaloguj się!
         </button>
       </form>
-      <Link to="/forgot-password">Zapomniałe hasła?</Link>
+      {error && <div className="error">{error}</div>}
+      <Link to="/forgot-password">Zapomniałeś hasła?</Link>
       <div>
-        Nie masz jeszcze konta? <Link to="/signup">Dołącz!</Link>
+        Nie masz konta? <Link to="/signup">Dołącz!</Link>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { Link } from "react-router-dom";
+import moonIcon from '../icons/moon.png'
 
 const ForgotPassword = () => {
   const emailRef = useRef();
@@ -17,32 +18,36 @@ const ForgotPassword = () => {
       setError("");
       setLoading(true);
       await resetPassword(emailRef.current.value);
-      setMessage("Check your inbox for further instructions");
+      setMessage("Sprawdź skrzynkę mailową!");
     } catch {
-      setError("Failed to reset password");
+      setError("Nie udało się zresetować konta");
     }
   }
 
   return (
-    <>
+    <div className="forgotpassword">
+      <img className="icon-big" src={moonIcon} />
+      <div className="logo-big">Witch mode</div>
+      <br></br>
+      <br></br>
       <h2>Zresetuj hasło</h2>
-      {error && <div>{error}</div>}
-      {message && <div>{message}</div>}
-      <form onSubmit={handleSubmit}>
+      <form className="forgotpassword-form" onSubmit={handleSubmit}>
         <label>
           Email
           <input id="email" ref={emailRef} required placeholder="Email" />
         </label>
 
-        <button type="submit" disabled={loading}>
+        <button className="button" type="submit" disabled={loading}>
           Resetuj hasło
         </button>
       </form>
+      {error && <div className="error">{error}</div>}
+      {message && <div className="success">{message}</div>}
       <Link to="/">Zaloguj się!</Link>
       <div>
-        Nie masz jeszcze konta? <Link to="/signup">Dołącz!</Link>
+        Nie masz konta? <Link to="/signup">Dołącz!</Link>
       </div>
-    </>
+    </div>
   );
 };
 

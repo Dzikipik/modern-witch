@@ -1,0 +1,8 @@
+.login {
+   @include loginPanel();
+   &-form {
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+   }
+}

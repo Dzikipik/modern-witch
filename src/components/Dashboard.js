@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import Aside from "./Aside";
+
 
 export default function Dashboard() {
   const [error, setError] = useState("");
@@ -14,13 +16,15 @@ export default function Dashboard() {
       await logout();
       navigate("/");
     } catch {
-      setError("Failed to logout");
+      setError("Nie udało się zalogować");
     }
   }
   return (
-    <div className="container">
+    <div className="container-app">
       <Navbar />
-      <div className="content">dalsza tresc</div>
+      <Aside />
+      {error && <div className="error">{error}</div>}
+      <div className="content">Witaj {currentUser.email}</div>
     </div>
   );
 }

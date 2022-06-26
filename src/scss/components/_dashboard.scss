@@ -1,13 +1,14 @@
-.container {
+.container-app {
     position: relative;
-    background-color: $color-dark-blue;
-    height: 80vh;
-    width: 80vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    border-radius: 2rem;
+    background-color: $color-dark-blue;
+    height: 80vh;
+    width: 80vw;
+    font-size: 1rem;
     border-radius: 2rem;
     
 }

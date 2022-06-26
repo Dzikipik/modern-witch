@@ -1,8 +1,10 @@
 .button {
-    padding: 10px 20px;
-    font-size: 1.6rem;
-    letter-spacing: 0.1rem;
-    background-color: $color-light-blue;
-    color: $color-darkest-blue;
-    font-family: $font-logo;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    background-color: $color-button-blue;
+    color: $color-yellow;
+    border: none;
+    font-weight: 100;
+    cursor: pointer;
+    border-radius: 0.5rem;
 }

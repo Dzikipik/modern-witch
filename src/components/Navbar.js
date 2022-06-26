@@ -14,16 +14,16 @@ export default function Navbar() {
         await logout();
         navigate("/");
       } catch {
-        setError("Failed to logout");
+        setError("Nie udało się zalogować");
       }
     }
     return (
       <>
         <div className="navbar">
-        <img className="icon" src={moonIcon} />
+        <img className="icon-small" src={moonIcon} />
           {error && <div className="error">{error}</div>}
-          <h2>Email:</h2> <p>{currentUser.email}</p>
-          <Link to="/update-profile" className="button">Zaktualizuj profil</Link>
+          <h2>{currentUser.email}</h2>
+          <Link to="/update-profile">Zaktualizuj profil</Link>
           <button className="button" onClick={handleLogOut}>Wyloguj</button>
         </div>
       </>

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+import moonIcon from '../icons/moon.png'
 
 const SignUp = () => {
   const emailRef = useRef();
@@ -15,7 +16,7 @@ const SignUp = () => {
     e.preventDefault();
 
     if (passwordRef.current.value !== passwordConfirmationRef.current.value) {
-      return setError("passwords do not match");
+      return setError("Hasła nie są identyczne");
     }
 
     try {
@@ -30,9 +31,10 @@ const SignUp = () => {
   }
 
   return (
-    <>
-      {error && <div>{error}</div>}
-      <form onSubmit={handleSubmit}>
+    <div className="signup">
+      <img className="icon-big" src={moonIcon} />
+      <div className="logo-big">Witch mode</div>
+      <form className="signup-form" onSubmit={handleSubmit}>
         <label>
           Email
           <input id="email" ref={emailRef} required placeholder="Email" />
@@ -57,14 +59,15 @@ const SignUp = () => {
             placeholder="Check password"
           />
         </label>
-        <button type="submit" disabled={loading}>
+        <button className="button" type="submit" disabled={loading}>
           Dołącz
         </button>
       </form>
+      {error && <div className="error">{error}</div>}
       <div>
-        Masz już konto? <Link to="/">Zaloguj się</Link>{" "}
+        Masz już konto? <Link to="/">Zaloguj się</Link>
       </div>
-    </>
+    </div>
   );
 };
 

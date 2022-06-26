@@ -1,0 +1,15 @@
+.logo {
+    font-weight: 300;
+    &-small {
+        font-size: 1.6rem;
+        @include logoVariables();
+    }
+    &-medium {
+        font-size: 2rem;
+        @include logoVariables();
+    }
+    &-big {
+        font-size: 2.4rem;
+        @include logoVariables();
+    }
+}

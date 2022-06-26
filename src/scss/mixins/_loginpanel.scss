@@ -1,0 +1,22 @@
+@mixin loginPanel() {
+    min-height: 55vh;
+    min-width: 30vw;
+    // padding: 3rem 4rem;
+    margin: 3rem;
+    border-radius: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    label {
+        padding-bottom: 1rem;
+        font-size: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        input {
+            padding: 0.5rem;
+        }
+    }
+  }
