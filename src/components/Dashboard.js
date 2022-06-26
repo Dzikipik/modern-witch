@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
 
 export default function Dashboard() {
   const [error, setError] = useState("");
@@ -17,13 +18,9 @@ export default function Dashboard() {
     }
   }
   return (
-    <>
-      <h2>Profile</h2>
-      {error && <div>{error}</div>}
-      <strong>Email:</strong> {currentUser.email}
-      <Link to="/update-profile">Update Profile</Link>
-      <div>Dashboard</div>
-      <button onClick={handleLogOut}>Log Out</button>
-    </>
+    <div className="container">
+      <Navbar />
+      <div className="content">dalsza tresc</div>
+    </div>
   );
 }

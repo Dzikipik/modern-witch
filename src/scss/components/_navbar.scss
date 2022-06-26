@@ -1,0 +1,13 @@
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    padding: 0 2rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-darkest-blue;
+    border: 1px solid $color-mid-blue;
+    
+}

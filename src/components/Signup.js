@@ -24,7 +24,7 @@ const SignUp = () => {
       await signup(emailRef.current.value, passwordRef.current.value);
       navigate("/dashboard");
     } catch {
-      setError("failed to create an account");
+      setError("Wystąpił błąd podczas tworzenia konta");
     }
     setLoading(false);
   }
