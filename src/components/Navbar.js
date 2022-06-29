@@ -4,9 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import moonIcon from "../icons/moon.png"
 
 export default function Navbar() {
-    const [error, setError] = useState("");
-    const { currentUser, logout } = useAuth();
-    const navigate = useNavigate();
+  const [error, setError] = useState("");
+  const [userName, setUserName] = useState("");
+  const { logout } = useAuth();
+  const navigate = useNavigate();
   
     async function handleLogOut() {
       setError("");
@@ -14,7 +15,7 @@ export default function Navbar() {
         await logout();
         navigate("/");
       } catch {
-        setError("Nie udało się zalogować");
+        setError("Nie udało się wylogować");
       }
     }
     return (
@@ -22,7 +23,7 @@ export default function Navbar() {
         <div className="navbar">
         <img className="icon-small" src={moonIcon} />
           {error && <div className="error">{error}</div>}
-          <h2>{currentUser.email}</h2>
+          <h2>{userName}</h2>
           <Link to="/update-profile">Zaktualizuj profil</Link>
           <button className="button" onClick={handleLogOut}>Wyloguj</button>
         </div>

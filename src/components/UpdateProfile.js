@@ -1,32 +1,33 @@
 import React, { useRef, useState } from "react";
-import { useAuth } from "../contexts/AuthContext";
+import { auth } from "../dataBase/firebase";
 import { Link, useNavigate } from "react-router-dom";
+import { updatePassword, updateEmail } from "firebase/auth";
 
 const UpdateProfile = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmationRef = useRef();
-  const { currentUser, updatePassword, updateEmail } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const user = auth.currentUser;
 
   function handleSubmit(e) {
     e.preventDefault();
 
     if (passwordRef.current.value !== passwordConfirmationRef.current.value) {
-      return setError("passwords do not match");
+      return setError("Hasła nie są identyczne");
     }
 
     const promises = [];
     setLoading(true);
     setError("");
 
-    if (emailRef.current.value !== currentUser.email) {
-      promises.push(updateEmail(emailRef.current.value));
+    if (emailRef.current.value !== auth.currentUser.email) {
+      updateEmail(user, emailRef.current.value);
     }
-    if (passwordRef.current.value !== currentUser.password) {
-      promises.push(updatePassword(passwordRef.current.value));
+    if (passwordRef.current.value !== auth.currentUser.password) {
+      updatePassword(user, passwordRef.current.value);
     }
 
     Promise.all(promises)
@@ -34,7 +35,7 @@ const UpdateProfile = () => {
         navigate("/");
       })
       .catch(() => {
-        setError("Failed to update account");
+        setError("Nie udało się zaktualizować konta");
       })
       .finally(() => {
         setLoading(false);
@@ -52,7 +53,7 @@ const UpdateProfile = () => {
             id="email"
             ref={emailRef}
             required
-            defaultValue={currentUser.email}
+            defaultValue={auth.currentUser.email}
             placeholder="Email"
           />
         </label>
