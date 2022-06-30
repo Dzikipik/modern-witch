@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { Link } from "react-router-dom";
-import moonIcon from '../icons/moon.png'
 
 const ForgotPassword = () => {
   const emailRef = useRef();
@@ -26,10 +25,6 @@ const ForgotPassword = () => {
 
   return (
     <div className="forgotpassword">
-      <img className="icon-big" src={moonIcon} />
-      <div className="logo-big">Witch mode</div>
-      <br></br>
-      <br></br>
       <h2>Zresetuj hasło</h2>
       <form className="forgotpassword-form" onSubmit={handleSubmit}>
         <label>

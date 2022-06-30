@@ -1,0 +1,23 @@
+.update-profile {
+    border-radius: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    label {
+        padding-bottom: 1rem;
+        font-size: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        input {
+            padding: 0.5rem;
+        }
+    }
+    &-form {
+       margin: auto;
+       display: flex;
+       flex-direction: column;
+    }
+ }

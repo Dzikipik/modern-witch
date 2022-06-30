@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
-import moonIcon from '../icons/moon.png'
+import Logo from "./Logo";
 
 const Login = () => {
   const emailRef = useRef();
@@ -27,8 +27,6 @@ const Login = () => {
 
   return (
     <div className="login">
-      <img className="icon-big" src={moonIcon} />
-      <div className="logo-big">Witch mode</div>
       <form className="login-form" onSubmit={handleSubmit}>
         <label>
           Email

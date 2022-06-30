@@ -1,13 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
+import { auth } from "../dataBase/firebase";
+import { onAuthStateChanged } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import moonIcon from "../icons/moon.png"
 
 export default function Navbar() {
   const [error, setError] = useState("");
   const [userName, setUserName] = useState("");
+  
   const { logout } = useAuth();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUserName(user.email);
+      } else {
+        setUserName("Brak zalogowanego użytkownika");
+      }
+    });
+
+    return unsubscribe;
+  }, []);
   
     async function handleLogOut() {
       setError("");
@@ -21,11 +36,14 @@ export default function Navbar() {
     return (
       <>
         <div className="navbar">
-        <img className="icon-small" src={moonIcon} />
-          {error && <div className="error">{error}</div>}
-          <h2>{userName}</h2>
-          <Link to="/update-profile">Zaktualizuj profil</Link>
-          <button className="button" onClick={handleLogOut}>Wyloguj</button>
+          <div className="navbar-user">
+            <Link to="/dashboard/"><img className="icon-small" src={moonIcon} /></Link>
+            <h2>{userName}</h2>
+          </div>
+          <div className="navbar-nav">
+            <Link to="/dashboard/update-profile">Profil</Link>
+            <button className="button" onClick={handleLogOut}>Wyloguj</button>
+          </div>
         </div>
       </>
     );

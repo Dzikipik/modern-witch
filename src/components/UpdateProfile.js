@@ -35,7 +35,7 @@ const UpdateProfile = () => {
         navigate("/");
       })
       .catch(() => {
-        setError("Nie udało się zaktualizować konta");
+        setError("Nie udało się zmienić hasła");
       })
       .finally(() => {
         setLoading(false);
@@ -43,22 +43,12 @@ const UpdateProfile = () => {
   }
 
   return (
-    <>
-      <h2>Update profile</h2>
-      {error && <div>{error}</div>}
-      <form onSubmit={handleSubmit}>
+    <div className="update-profile">
+      <h2>Zmiana hasła</h2>
+      <div>Zalogowany jako {user.email}</div>
+      <form className="login-form" onSubmit={handleSubmit}>
         <label>
-          Email
-          <input
-            id="email"
-            ref={emailRef}
-            required
-            defaultValue={auth.currentUser.email}
-            placeholder="Email"
-          />
-        </label>
-        <label>
-          Password
+          Hasło
           <input
             id="password"
             type="password"
@@ -68,7 +58,7 @@ const UpdateProfile = () => {
           />
         </label>
         <label>
-          Password
+          Powtórz hasło
           <input
             id="checkPassword"
             type="password"
@@ -77,14 +67,15 @@ const UpdateProfile = () => {
             placeholder="Leave blank to keep the same"
           />
         </label>
-        <button type="submit" disabled={loading}>
-          Update
+        <button className="button" type="submit" disabled={loading}>
+          Zaktualizuj
         </button>
       </form>
+      {error && <div className="error">{error}</div>}
       <div>
-        <Link to="/">Cancel</Link>{" "}
+        <Link to="/">Anuluj</Link>{" "}
       </div>
-    </>
+    </div>
   );
 };
 

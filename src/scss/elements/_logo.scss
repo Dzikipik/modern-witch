@@ -12,4 +12,11 @@
         font-size: 2.4rem;
         @include logoVariables();
     }
+    &-loginpanel{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4rem;
+    }
+
 }

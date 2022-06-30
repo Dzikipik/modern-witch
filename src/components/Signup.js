@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
-import moonIcon from '../icons/moon.png'
 
 const SignUp = () => {
   const emailRef = useRef();
@@ -32,8 +31,6 @@ const SignUp = () => {
 
   return (
     <div className="signup">
-      <img className="icon-big" src={moonIcon} />
-      <div className="logo-big">Witch mode</div>
       <form className="signup-form" onSubmit={handleSubmit}>
         <label>
           Email
