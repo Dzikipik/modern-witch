@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+import Logo from "./Logo";
 
 const SignUp = () => {
   const emailRef = useRef();
@@ -30,6 +31,8 @@ const SignUp = () => {
   }
 
   return (
+    <>
+    <Logo />
     <div className="signup">
       <form className="signup-form" onSubmit={handleSubmit}>
         <label>
@@ -61,10 +64,13 @@ const SignUp = () => {
         </button>
       </form>
       {error && <div className="error">{error}</div>}
+      <div className="login-bottom">
       <div>
         Masz już konto? <Link to="/">Zaloguj się</Link>
       </div>
+      </div>
     </div>
+    </>
   );
 };
 

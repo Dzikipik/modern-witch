@@ -3,9 +3,9 @@ import moonIcon from '../icons/moon.png'
 
 export default function Logo() {
     return (
-    <div className="logo-loginpanel">
+    <div className="login-logo">
         <img className="icon-big" src={moonIcon} />
-        <div className="logo-big">Witch mode</div>
+        <div className="logo-big">State of notion</div>
     </div>
     );
   }

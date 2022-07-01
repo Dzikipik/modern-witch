@@ -26,6 +26,8 @@ const Login = () => {
   }
 
   return (
+    <>
+    <Logo />
     <div className="login">
       <form className="login-form" onSubmit={handleSubmit}>
         <label>
@@ -48,11 +50,13 @@ const Login = () => {
         </button>
       </form>
       {error && <div className="error">{error}</div>}
-      <Link to="/forgot-password">Zapomniałeś hasła?</Link>
-      <div>
-        Nie masz konta? <Link to="/signup">Dołącz!</Link>
+      
+      <div className="login-bottom">
+        <Link to="/forgot-password">Zapomniałeś hasła?</Link>
+        <div>Nie masz konta? <Link to="/signup">Dołącz!</Link></div>
       </div>
     </div>
+    </>
   );
 };
 

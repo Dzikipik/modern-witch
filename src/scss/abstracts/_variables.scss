@@ -15,9 +15,16 @@ $font-weight-bold: 700;
 
 
 h2 {
-    font-size: 1.4rem;
+    font-size: 2.8rem;
 }
 
 p {
-    font-size: 1.2rem;
+    font-size: 2rem;
+}
+
+a {
+    color: $color-yellow;
+    text-decoration: none;
+    font-family: $font-text;
+    font-weight: $font-weight-bold;        
 }

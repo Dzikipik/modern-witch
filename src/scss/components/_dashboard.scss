@@ -1,15 +1,17 @@
-.container-app {
+.dashboard {
+    margin-top: 10%;
+    background-color: $color-purple-warning;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 2rem;
+    border-radius: 4rem;
     background-color: $color-dark-blue;
-    height: 80vh;
-    width: 80vw;
-    font-size: 1rem;
-    border-radius: 2rem;
+    height: 70vh;
+    width: 50vw;
+    font-size: 2rem;
+    border-radius: 4rem;
     
 }
 .content {

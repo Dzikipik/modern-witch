@@ -1,7 +1,4 @@
 .success {
     background-color: $color-green-success;
-    padding: 1rem 1.5rem;
-    border-radius: 0.5rem;
-    margin: 1rem 0;
-
+    @include alerts();
 }

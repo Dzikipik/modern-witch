@@ -13,7 +13,7 @@ import TarotCard from "./TarotCard";
 
 export default function Dashboard() {
   return (
-    <div className="container-app">
+    <div className="dashboard">
       <Navbar />
       <div className="content">
           <Menu />

@@ -1,7 +1,9 @@
 @import '../scss/abstracts/reset';
+@import '../scss/abstracts/normalize';
 @import '../scss/abstracts/variables';
 @import '../scss/mixins/loginpanel';
 @import '../scss/mixins/logovariables';
+@import '../scss/mixins/alerts';
 @import '../scss/abstracts/success';
 @import '../scss/abstracts/error';
 @import '../scss/components/app';
