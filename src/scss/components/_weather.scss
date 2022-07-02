@@ -1,3 +1,6 @@
 .weather {
-    background-color: $color-green-success;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

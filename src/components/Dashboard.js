@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import UpdateProfile from "./UpdateProfile";
 import Navbar from "./Navbar";
@@ -6,7 +6,7 @@ import Menu from "./Menu";
 import MainContent from "./MainContent";
 import MoonPhase from "./MoonPhase";
 import Comunicator from "./Comunicator";
-import Weather from "./Weather";
+import Weather from "./weather/Weather";
 import NameDay from "./NameDay";
 import TarotCard from "./TarotCard";
 

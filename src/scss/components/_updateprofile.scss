@@ -1,23 +1,10 @@
 .update-profile {
-    border-radius: 6rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    label {
-        padding-bottom: 2rem;
-        font-size: 2.4rem;
+    @include loginPanel();
+    &-form {
+        margin: auto;
+        width: 60%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        input {
-            padding: 1rem;
-        }
-    }
-    &-form {
-       margin: auto;
-       display: flex;
-       flex-direction: column;
-    }
+        text-align: center;
+     }
  }

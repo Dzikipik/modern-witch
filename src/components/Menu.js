@@ -5,10 +5,6 @@ import List from "./List";
 import ListElement from "./ListElement";
 
 export default function Menu() {
-    const [error, setError] = useState("");
-    const { currentUser } = useAuth();
-    const navigate = useNavigate();
-  
     return (
       <div className="menu">
         <List>

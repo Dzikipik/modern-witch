@@ -54,7 +54,7 @@ const UpdateProfile = () => {
             type="password"
             ref={passwordRef}
             required
-            placeholder="Leave blank to keep the same"
+            placeholder="Hasło"
           />
         </label>
         <label>
@@ -64,7 +64,7 @@ const UpdateProfile = () => {
             type="password"
             ref={passwordConfirmationRef}
             required
-            placeholder="Leave blank to keep the same"
+            placeholder="Powtórz hasło"
           />
         </label>
         <button className="button" type="submit" disabled={loading}>
