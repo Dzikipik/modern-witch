@@ -1,27 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const FormCity = ({submitSearch}) => {
-    const [location, setLocation] = useState('');
-  
-    const onSubmit = (e) => {
-        e.preventDefault()
-        console.log("potwierdzony formularz")
-        if (!location || location === "") return;
-        submitSearch(location);
-    }
 
+const FormCity = ({value}) => {  
     return(
-        <form onSubmit={onSubmit}>
-        <label>
-            Wyszukaj miasto
+        <form>
+            <label>
+                Wyszukaj miasto
             <input 
                 aria-label='location'
                 type="text" 
                 required placeholder="Wyszukaj miasto" 
-                value={location}
-                onChange={e => setLocation(e.target.value)}/>
+                value={value}
+                onChange={e => e.target.value}/>
             </label>
-        <button type="submit" className="button" onClick={onSubmit}>Wyszukaj miasto</button>
+        <button type="submit" className="button">Wyszukaj miasto</button>
         </form>
     )
 }

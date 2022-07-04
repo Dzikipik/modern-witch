@@ -1,6 +1,17 @@
 .weather {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include loginPanel();
+    &-form {
+        margin: auto;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+     }
+     &-data {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.8rem;
+        text-align: center;
+        margin-top: 1rem;
+     }
 }
