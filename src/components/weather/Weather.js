@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import CurrentDay from "./CurrentDay";
-import Forecast from "./Forecast";
 import Loader from "./Loader";
 
 const WeatherIcons = {
@@ -24,6 +23,7 @@ const WeatherIcons = {
 const Weather = () => {
   const [data, setData] = useState({
     date: "",
+    icon: "",
     name: "", 
     sunrise: "", 
     sunset: "",
@@ -53,6 +53,7 @@ const Weather = () => {
       const time = new Date().toLocaleString()
       setData({
         date: time,
+        icon:data.weather[0].icon,
         name: data.name, 
         sunrise: data.sys.sunrise, 
         sunset: data.sys.sunset,
@@ -82,11 +83,16 @@ const Weather = () => {
             </label>
             <button type="submit" className="button" onClick={searchLocation}>Wyszukaj miasto</button>
           </form>
-          {loading && <Loader />}
-          {error && <div className="error">Miasto nie istnieje</div>}
+
+      
+            {loading && <Loader />}
+            {error && <div className="error">Miasto nie istnieje</div>}
+
+
           <div className="weather-data">
             {data.name.length === 0 || error ? null : <CurrentDay forecast={data}/>}
           </div>
+          
           
         </div>
     );
