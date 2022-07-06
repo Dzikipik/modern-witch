@@ -1,0 +1,48 @@
+.chat {
+  height: 100%;
+  width: 100%;
+  background-color: $color-yellow;
+  padding: 0;
+    &-messages {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+      }
+    &-msg {
+        display: flex;
+        padding: 2rem 1rem 0 2rem;
+        margin: 1rem;
+        border-radius: 300rem;
+        align-items: center;
+        &-sent {
+            background-color: #395dff;
+            color: $color-green-success;
+            border-top-right-radius: 100rem;
+            flex-direction: row-reverse;
+            text-align: end;
+            float: right;
+        }
+        &-received {
+            border: 1px solid lightgray;
+            background-color: $color-purple-warning;
+            border-top-left-radius: 100rem;
+            float: left;
+        }
+      }    
+      
+      &-sendMsg {
+        position: fixed;
+        display: flex;
+        width: 100%;
+        bottom: 0;
+        z-index: 1;
+        border-top: 1px solid lightgray;
+        margin-left: -5px;
+        padding: 10px;
+        padding-bottom: 30px;
+        background-color: #fafafa;
+      }
+      
+    
+}

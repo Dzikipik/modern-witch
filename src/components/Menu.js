@@ -29,7 +29,7 @@ export default function Menu() {
           </Link>
         </ListElement>
         <ListElement>
-          <Link className="list-el-link" to="/dashboard/comunicator">
+          <Link className="list-el-link" to="/dashboard/chat">
             Komunikator
           </Link>
         </ListElement>
