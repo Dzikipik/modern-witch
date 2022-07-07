@@ -20,6 +20,7 @@ function SendMessage({ scroll }) {
         const collectionRef = collection(db, "messages");
         const payload = {
             text: msg,
+            uid: auth.currentUser.uid,
             createAt: serverTimestamp()};
         await addDoc(collectionRef, payload);
         setMsg('')

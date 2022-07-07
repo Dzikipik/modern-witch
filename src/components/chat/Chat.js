@@ -10,42 +10,37 @@ export default function Chat() {
         text: "",
     }])
 
+   useEffect(() => {
+        const collectionRef = collection(db, "messages");
+        const q = query(collectionRef, orderBy("createAt", "desc"), limit(20));
 
-
-    
-
-
-    useEffect(
-        () => {
-        onSnapshot(collection(db, "messages"), (snapshot) => {
+        const unsub = onSnapshot(q, (snapshot) => 
         setMessages(snapshot.docs.map((doc) => ({...doc.data(), id:doc.id})))
-        })
-        return
-    } 
-    // .orderBy("createAt").limit(10)
+        )
+        return unsub
+    }, []);
 
-         // console.log(getMessages);
-       , []);
+
     return (
         <div className="chat">
             <div className="chat-messages">
  
                 {messages.map(({id, text, photoURL, uid}) => (
-                    <div key={id} className="chat-msg">
-                        <div  className={`chat-msg ${uid === auth.currentUser ? 'chat-msg-sent' : 'chat-msg-received'}`}>
+                    <div key={id}>
+                        <div className={`${uid === auth.currentUser.uid ? 'chat-msg-sent' : 'chat-msg-received'}`}>
                         <img src={photoURL} alt="" />
                         <p>{text}</p>
                         </div>
                     </div>
                 ))}
-                <SendMessage scroll={scroll} />
-            <div ref={scroll}></div>
+            
             </div>
-        
+        <div>
+        <SendMessage scroll={scroll} />
+            <div ref={scroll}></div>
+        </div>
             
             
         </div>
     )
 }
-
-
