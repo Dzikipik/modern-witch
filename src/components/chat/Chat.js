@@ -8,8 +8,13 @@ export default function Chat() {
     const [messages, setMessages] = useState([{
         id: "",
         text: "",
-    
     }])
+
+
+
+    
+
+
     useEffect(
         () => {
         onSnapshot(collection(db, "messages"), (snapshot) => {
@@ -21,22 +26,24 @@ export default function Chat() {
 
          // console.log(getMessages);
        , []);
-      console.log(messages)
     return (
         <div className="chat">
             <div className="chat-messages">
  
                 {messages.map(({id, text, photoURL, uid}) => (
-                    <div key={id}>
-                        <div key={text} className={`chat-msg ${uid === auth.currentUser.uid ? 'chat-msg-sent' : 'chat-msg-received'}`}>
+                    <div key={id} className="chat-msg">
+                        <div  className={`chat-msg ${uid === auth.currentUser ? 'chat-msg-sent' : 'chat-msg-received'}`}>
                         <img src={photoURL} alt="" />
                         <p>{text}</p>
                         </div>
                     </div>
                 ))}
-            </div>
-            <SendMessage scroll={scroll} />
+                <SendMessage scroll={scroll} />
             <div ref={scroll}></div>
+            </div>
+        
+            
+            
         </div>
     )
 }
