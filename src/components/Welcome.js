@@ -17,9 +17,9 @@ export default function Welcome() {
       }, []);
   
     return (
-      <>
+      <div className="welcome">
       <div>Witaj {userName}</div>
-      </>
+      </div>
         
     );
   }

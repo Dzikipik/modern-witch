@@ -44,8 +44,11 @@ const UpdateProfile = () => {
 
   return (
     <div className="update-profile">
-      <h2>Zmiana hasła</h2>
-      <div>Zalogowany jako {user.email}</div>
+      <div className="header">
+        <h2>Ustawienia profilu</h2>
+        <p>Zalogowany jako {user.email}</p>
+      </div>
+      
       <form className="login-form" onSubmit={handleSubmit}>
         <label>
           Hasło
@@ -72,9 +75,9 @@ const UpdateProfile = () => {
         </button>
       </form>
       {error && <div className="error">{error}</div>}
-      <div>
-        <Link to="/">Anuluj</Link>{" "}
-      </div>
+      {/* <div className="login-bottom">
+        <Link to="/dashboard">Anuluj</Link>
+      </div> */}
     </div>
   );
 };

@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import {db, auth} from '../../dataBase/firebase'
 import SendMessage from './SendMessage'
-import { getFirestore, collection, query, where, getDocs, orderBy, limit, onSnapshot } from "firebase/firestore"
+import { getFirestore, collection, query, where, getDocs, orderBy, limit, onSnapshot } from "firebase/firestore";
+
 
 export default function Chat() {
     const scroll = useRef()
@@ -42,7 +43,7 @@ export default function Chat() {
         
         
         <SendMessage scroll={scroll} />
-            {/* <div ref={scroll}></div> */}
+            <div ref={scroll}></div>
         
             
             

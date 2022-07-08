@@ -20,7 +20,7 @@ const Login = () => {
       await login(emailRef.current.value, passwordRef.current.value);
       navigate("/dashboard");
     } catch {
-      setError("Nie udało się zalogować");
+      setError("Błędne hasło");
     }
     setLoading(false);
   }

@@ -1,5 +1,7 @@
 .app {
-    background-color: #0C2840;
+    background-image: url("../../icons/bg.png");
+    background-repeat: repeat;
+    background-size: contain;
     color: #FAF9E2;
     width: 100vw;
     height: 100vh;
@@ -13,10 +15,13 @@
 }
 
 .container {
+    margin: auto;
+    border-radius: 4rem;
+    background-color: $color-darkest-blue;
     position: relative;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    padding: 1rem 0;
 }

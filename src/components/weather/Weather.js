@@ -4,6 +4,7 @@ import Loader from "./Loader";
 
 const Weather = () => {
   const [data, setData] = useState({
+    value: "",
     date: "",
     icon: "",
     name: "", 
@@ -44,7 +45,8 @@ const Weather = () => {
         wind: data.wind.speed,
       })
       setError(false);
-      setLoading(false)
+      setLoading(false);
+      setLocation("")
     })
     .catch(err => {
       setError(true);
@@ -54,6 +56,9 @@ const Weather = () => {
   
     return (
         <div className="weather">
+          <div className="header">
+                <h2>Pogoda</h2>
+            </div>
           <form className="weather-form" onSubmit={searchLocation}>
             <label>
                 <input 

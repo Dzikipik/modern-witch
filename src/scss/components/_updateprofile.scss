@@ -1,5 +1,20 @@
 .update-profile {
-    @include loginPanel();
+    @include maincontent();
+    label {
+        padding-bottom: 2rem;
+        font-size: 2.4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        input {
+            padding: 1rem;
+            background-color: $color-light-blue;
+            color: $color-darkest-blue;
+            width: 100%;
+            font-size: 1.6rem;
+        }
+    }
     &-form {
         margin: auto;
         width: 60%;

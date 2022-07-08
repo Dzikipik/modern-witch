@@ -4,4 +4,9 @@
     box-sizing: border-box;
     font-size: 10px;
   }
-  
+
+:root {
+  background: #0C2840;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(circle, rgba(235,234,217,1) 15%, rgba(118,138,155,1) 41%, rgba(12,40,64,1) 100%);  /* Chrome 10-25, Safari 5.1-6 */
+  background: radial-gradient(circle, rgba(235,234,217,1) 15%, rgba(118,138,155,1) 41%, rgba(12,40,64,1) 100%);
+}
