@@ -3,7 +3,7 @@ import { useAuth } from "../contexts/AuthContext";
 import { auth } from "../dataBase/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
-import moonIcon from "../icons/moon.png"
+import moonIcon from "../icons/moon.png";
 
 export default function Navbar() {
   const [error, setError] = useState("");

@@ -4,6 +4,7 @@
 @import '../scss/mixins/loginpanel';
 @import '../scss/mixins/logovariables';
 @import '../scss/mixins/alerts';
+@import '../scss/mixins/scrollbars';
 @import '../scss/abstracts/success';
 @import '../scss/abstracts/error';
 @import '../scss/components/app';
@@ -13,10 +14,11 @@
 @import '../scss/elements/icons';
 @import '../scss/elements/list';
 @import '../scss/elements/listElement';
+@import '../scss/elements/header';
 @import '../scss/components/dashboard';
 @import '../scss/components/navbar';
 @import '../scss/components/menu';
-@import '../scss/components/maincontent';
+@import '../scss/components/welcome';
 @import '../scss/components/forgotpassword';
 @import '../scss/components/login';
 @import '../scss/components/moonphase';

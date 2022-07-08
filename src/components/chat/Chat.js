@@ -22,9 +22,13 @@ export default function Chat() {
 
 
     return (
+
         <div className="chat">
+            <div className="header">
+                <h2>State of notion</h2>
+                <p>chat</p>
+            </div>
             <div className="chat-messages">
- 
                 {messages.map(({id, text, photoURL, uid}) => (
                     <div key={id}>
                         <div className={`${uid === auth.currentUser.uid ? 'chat-msg-sent' : 'chat-msg-received'}`}>
@@ -35,12 +39,14 @@ export default function Chat() {
                 ))}
             
             </div>
-        <div>
+        
+        
         <SendMessage scroll={scroll} />
-            <div ref={scroll}></div>
-        </div>
+            {/* <div ref={scroll}></div> */}
+        
             
             
         </div>
+
     )
 }

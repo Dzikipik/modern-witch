@@ -4,8 +4,6 @@ import { auth } from "../dataBase/firebase";
 
 export default function MoonPhase() {
     return (
-      <div className="content">
-        <div className="main-content">Księżyc</div>
-      </div>
+        <div className="moon">Księżyc</div>
     );
   }

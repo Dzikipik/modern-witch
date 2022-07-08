@@ -27,8 +27,7 @@ function SendMessage({ scroll }) {
         scroll.current.scrollIntoView({ behavior: 'smooth' })
     }
     return (
-        <div>
-            <form onSubmit={sendMessage}>
+            <form className='chat-form' onSubmit={sendMessage}>
                 <div className="chat-sendMsg">
                     <input 
                     placeholder='Napisz coś...' 
@@ -37,7 +36,6 @@ function SendMessage({ scroll }) {
                     <button className="button" type="submit">Wyślij</button>
                 </div>
             </form>
-        </div>
     )
 }
 

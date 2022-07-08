@@ -25,7 +25,7 @@ const ForgotPassword = () => {
   }
 
   return (
-    <>
+    <div className="container">
     <Logo/>
     <div className="forgotpassword">
       <h2>Zresetuj hasło</h2>
@@ -48,7 +48,7 @@ const ForgotPassword = () => {
         </div>
       </div>
     </div>
-    </>
+    </div>
   );
 };
 

@@ -1,11 +1,14 @@
 .icon {
     &-small{
         height: 4rem;
+        width:4rem;
     }
     &-medium {
         height: 10rem;
+        width: 10rem;
     }
     &-big {
         height: 20rem;
+        width: 20rem;
     }
 }

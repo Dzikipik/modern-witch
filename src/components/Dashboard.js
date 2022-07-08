@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import UpdateProfile from "./UpdateProfile";
 import Navbar from "./Navbar";
 import Menu from "./Menu";
-import MainContent from "./MainContent";
+import Welcome from "./Welcome";
 import MoonPhase from "./MoonPhase";
 import Chat from "./chat/Chat";
 import Weather from "./weather/Weather";
@@ -15,11 +15,10 @@ export default function Dashboard() {
   return (
     <div className="dashboard">
       <Navbar />
-      <div className="content">
-          <Menu />
-          <div className="main-content">
+      <Menu />
+      
             <Routes>
-                  <Route path="/" element={<MainContent />} />
+                  <Route path="/" element={<Welcome />} />
                   <Route path="/weather" element={<Weather />} />
                   <Route path="/nameday" element={<NameDay />} />
                   <Route path="/tarotcard" element={<TarotCard />} />
@@ -27,8 +26,8 @@ export default function Dashboard() {
                   <Route path="/chat" element={<Chat />} />
                   <Route path="/update-profile" element={<UpdateProfile />} />
             </Routes>
-          </div>
-      </div>
+
+
     </div>
   );
 }

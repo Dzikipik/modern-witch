@@ -31,7 +31,7 @@ const SignUp = () => {
   }
 
   return (
-    <>
+    <dic className="container">
     <Logo />
     <div className="signup">
       <form className="signup-form" onSubmit={handleSubmit}>
@@ -70,7 +70,7 @@ const SignUp = () => {
       </div>
       </div>
     </div>
-    </>
+    </dic>
   );
 };
 

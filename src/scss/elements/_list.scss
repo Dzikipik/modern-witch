@@ -1,8 +1,18 @@
 .list {
     height: 100%;
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     justify-content: space-around;
     align-items: center;
     list-style: none;
+    &-el-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem;
+        font-weight: $font-weight-standard;
+        gap: .5rem;
+
+    }
 }

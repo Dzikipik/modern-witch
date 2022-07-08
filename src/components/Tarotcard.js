@@ -4,6 +4,6 @@ import { auth } from "../dataBase/firebase";
 
 export default function TarotCard() {
     return (
-        <div className="main-content">Tarot</div>
+        <div className="tarot">Tarot</div>
     );
   }
