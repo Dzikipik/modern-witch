@@ -6,6 +6,7 @@ import { getFirestore, collection, query, where, getDocs, orderBy, limit, onSnap
 
 export default function Chat() {
     const scroll = useRef()
+    const [loading, setLoading] = useState(false)
     const [messages, setMessages] = useState([{
         id: "",
         text: "",

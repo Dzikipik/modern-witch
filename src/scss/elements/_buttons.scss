@@ -1,11 +1,18 @@
 .button {
-    padding: 1rem 2rem;
-    font-size: 2.4rem;
+    padding: .4rem .6rem;
+    font-size: 1.4rem;
     text-align: center;
     background-color: $color-button-blue;
     color: $color-yellow;
     border: none;
-    font-weight: 100;
+    font-weight: 300;
     cursor: pointer;
     border-radius: 1rem;
+
+    @media (min-width: $sm) {
+        padding: 1rem 2rem;
+        font-size: 2.4rem;
+        font-weight: 100;
+    }
+    
 }

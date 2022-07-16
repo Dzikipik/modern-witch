@@ -49,7 +49,7 @@ const UpdateProfile = () => {
         <p>Zalogowany jako {user.email}</p>
       </div>
       
-      <form className="login-form" onSubmit={handleSubmit}>
+      <form className="update-profile-form" onSubmit={handleSubmit}>
         <label>
           Hasło
           <input
@@ -75,9 +75,6 @@ const UpdateProfile = () => {
         </button>
       </form>
       {error && <div className="error">{error}</div>}
-      {/* <div className="login-bottom">
-        <Link to="/dashboard">Anuluj</Link>
-      </div> */}
     </div>
   );
 };

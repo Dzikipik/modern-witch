@@ -1,5 +1,4 @@
 @mixin loginPanel() {
-    min-width: 30vw;
     border-radius: 6rem;
     display: flex;
     flex-direction: column;
@@ -7,8 +6,8 @@
     align-items: center;
     flex-grow: 1;
     label {
-        padding-bottom: 2rem;
-        font-size: 2.4rem;
+        padding-bottom: 1rem;
+        font-size: 1.6rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -18,7 +17,20 @@
             background-color: $color-light-blue;
             color: $color-darkest-blue;
             width: 100%;
-            font-size: 1.6rem;
+            font-size: 1.2rem;
         }
     }
-  }
+
+    @media (min-width: $sm) {
+        min-width: 30vw;
+        label {
+            padding-bottom: 2rem;
+            font-size: 2.4rem;
+            input {
+                width: 100%;
+                font-size: 1.6rem;
+            }
+        }
+    }
+    
+}

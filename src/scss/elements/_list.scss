@@ -1,7 +1,6 @@
 .list {
     height: 100%;
     display: flex;
-    // flex-direction: column;
     justify-content: space-around;
     align-items: center;
     list-style: none;
@@ -10,9 +9,16 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         font-weight: $font-weight-standard;
         gap: .5rem;
 
     }
+    @media (min-width: $sm) {
+            &-el-link {
+            font-size: 1.6rem;
+        }
+    }
+
+
 }

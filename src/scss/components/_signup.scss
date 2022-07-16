@@ -1,11 +1,21 @@
 .signup {
     @include loginPanel();
     &-form {
-        width: 60%;
+        width: 30rem;
         margin: auto;
         text-align: center;
         display: flex;
+        justify-content: flex-start;
         flex-direction: column;
+        flex-grow: 1;
         
      }
+
+    @media (min-width: $sm) {
+        &-form {
+            width: 36rem;
+            padding-top: 2rem; 
+         }
+    }
+    
 }

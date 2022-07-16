@@ -1,14 +1,29 @@
 .icon {
     &-small{
-        height: 4rem;
-        width:4rem;
+        height: 3rem;
+        width: 3rem;
     }
     &-medium {
-        height: 10rem;
-        width: 10rem;
+        height: 5rem;
+        width: 5rem;
     }
     &-big {
-        height: 20rem;
-        width: 20rem;
+        height: 12rem;
+        width: 12rem;
     }
+    @media (min-width: 768px) {
+        &-small{
+            height: 4rem;
+            width:4rem;
+        }
+        &-medium {
+            height: 10rem;
+            width: 10rem;
+        }
+        &-big {
+            height: 20rem;
+            width: 20rem;
+        }
+    }
+    
 }

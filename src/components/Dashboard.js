@@ -8,7 +8,7 @@ import MoonPhase from "./MoonPhase";
 import Chat from "./chat/Chat";
 import Weather from "./weather/Weather";
 import NameDay from "./NameDay";
-import TarotCard from "./TarotCard";
+import TarotCard from "./tarot/TarotCard";
 
 
 export default function Dashboard() {

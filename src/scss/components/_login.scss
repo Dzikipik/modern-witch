@@ -2,15 +2,17 @@
    @include loginPanel();
    &-form {
       margin: auto;
-      width: 60%;
+      width: 30rem;
       display: flex;
       flex-direction: column;
       text-align: center;
+      flex-grow: 1;
    }
    &-bottom {
+      height: 3rem;
       display: flex;
       flex-direction: column;
-      font-size: 1.8rem;
+      font-size: 1.4rem;
       text-align: center;
       margin: 1rem 0;
       
@@ -22,4 +24,14 @@
       align-items: center;
       height: 35%;
   }
+   @media (min-width: $sm) {
+      &-form {
+         width: 36rem;
+         padding-top: 2rem;
+      }
+      &-bottom {
+         font-size: 1.8rem;
+      }
+  }
+   
 }

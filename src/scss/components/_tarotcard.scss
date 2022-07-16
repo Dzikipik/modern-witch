@@ -1,4 +1,33 @@
 .tarotcard {
     @include maincontent();
+        padding: 1rem;
+        &-img {
+            height: 50%;
+        }
+        &-data {
+            height: 50%;
+    }
+}
 
+.currentCard{
+        text-align: center;
+        flex-grow: 1;
+        h2{
+            color: $color-yellow;
+            font-size: 1.6rem;
+            padding-bottom: .5rem;
+        }
+        p {
+            font-size: 1.2rem;
+            padding-bottom: .5rem;
+        }
+    @media (min-width: $sm) {
+        h2{
+            padding-bottom: 1rem;
+        }
+        p {
+            font-size: 1.6rem;
+            padding-bottom: 1rem;
+        }
+    }
 }

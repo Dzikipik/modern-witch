@@ -53,6 +53,8 @@ const MoonPhase = () => {
           setLoading(false);
       })
       }
+
+      
     return (
         <div className="moonphase">
             <div className="moon">Księżyc</div>

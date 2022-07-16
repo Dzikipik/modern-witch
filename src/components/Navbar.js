@@ -38,7 +38,6 @@ export default function Navbar() {
         <div className="navbar">
           <div className="navbar-user">
             <Link to="/dashboard/"><img className="icon-small" src={moonIcon} /></Link>
-            <h2>{userName}</h2>
           </div>
           <div className="navbar-nav">
             <Link to="/dashboard/update-profile">Profil</Link>
