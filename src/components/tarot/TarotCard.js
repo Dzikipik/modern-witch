@@ -3,6 +3,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../dataBase/firebase";
 import CurrentCard from "./CurrentCard"
 import Loader from "../weather/Loader";
+// import TarotCards from "./cards"
 
 const TarotCard = () => {
       const [card, setCard] = useState({
@@ -15,11 +16,17 @@ const TarotCard = () => {
       const [error, setError] = useState(false);
       const [loading, setLoading] = useState(false);
     
-      function randomBetween(min, max) {
-        return Math.random() * (max - min);
-      }
+      // const getDate = () =>{
+      //   const currentData = new Date();
+      //   const date = `${currentData.getDate()}`
+      // }
 
-      const TAROTAPI = `https://rws-cards-api.herokuapp.com/api/v1/cards/random?n=${randomBetween}`;
+      // function randomBetween(min, max) {
+      //   return Math.random() * (max - min);
+      // }
+      
+
+      const TAROTAPI = `https://rws-cards-api.herokuapp.com/api/v1/cards/random?n=1`;
       
       const getTarotCard = (e) => {
         e.preventDefault();
