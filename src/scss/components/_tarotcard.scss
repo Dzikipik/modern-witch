@@ -1,12 +1,10 @@
 .tarotcard {
     @include maincontent();
         padding: 1rem;
+        gap: 1rem;
         &-img {
-            height: 50%;
+            max-height: 28rem;
         }
-        &-data {
-            height: 50%;
-    }
 }
 
 .currentCard{

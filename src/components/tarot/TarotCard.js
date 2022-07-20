@@ -15,7 +15,7 @@ const TarotCard = () => {
         });
       const [error, setError] = useState(false);
       const [loading, setLoading] = useState(false);
-    
+      const [imgUrl, setImgUrl] = useState("")
       // const getDate = () =>{
       //   const currentData = new Date();
       //   const date = `${currentData.getDate()}`
@@ -43,30 +43,32 @@ const TarotCard = () => {
           setCard({
             value: card.cards[0].value_int,
             type: card.cards[0].type,
+            suit: card.cards[0].suit,
             name: card.cards[0].name,
             meaningUp: card.cards[0].meaning_up,
             meaningRev: card.cards[0].meaning_rev,
           })
           setError(false);
-          setLoading(false);
+          setLoading(false); 
         })
         .catch(err => {
           setError(true);
           setLoading(false);
       })
     }
+
+
     return (
+        <>
         <div className="tarotcard">
           <div className="header">
                 <h2>Daily tarot card</h2>
                 <button className="button" onClick={getTarotCard}>Wylosuj kartę</button>
             </div>
             {loading && <Loader />}
-            <div className="tarotcard-img"></div>
-            <div className="tarotcard-data">
             {card.name.length === 0 || error ? null : <CurrentCard tarot={card}/>}
-            </div>
         </div>
+        </>
     );
   }
 
