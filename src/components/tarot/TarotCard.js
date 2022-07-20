@@ -15,15 +15,10 @@ const TarotCard = () => {
         });
       const [error, setError] = useState(false);
       const [loading, setLoading] = useState(false);
-      const [imgUrl, setImgUrl] = useState("")
-      // const getDate = () =>{
-      //   const currentData = new Date();
-      //   const date = `${currentData.getDate()}`
-      // }
 
-      // function randomBetween(min, max) {
-      //   return Math.random() * (max - min);
-      // }
+      const getDate = () =>{
+        const currentData = new Date();
+      }
       
 
       const TAROTAPI = `https://rws-cards-api.herokuapp.com/api/v1/cards/random?n=1`;
