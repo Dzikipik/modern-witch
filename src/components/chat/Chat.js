@@ -20,7 +20,7 @@ export default function Chat() {
         setMessages(snapshot.docs.map((doc) => ({
             ...doc.data(), 
             id:doc.id,
-            createAt: doc.data().createAt.toDate().toDateString()
+            createAt: doc.data().createAt.toDate().toUTCString()
         })))
         
         )
@@ -39,9 +39,11 @@ export default function Chat() {
             <div className="chat-messages">
                 {messages.map(({id, text, photoURL, uid, createAt}) => (
                     <div key={id}>
+                        <div className={`${uid === auth.currentUser.uid ? 'chat-messages-data-sent' : 'chat-messages-data-received'}`}>
+                            {createAt}
+                        </div>
                         <div className={`${uid === auth.currentUser.uid ? 'chat-msg-sent' : 'chat-msg-received'}`}>
-                        <p className="chat-messages-data">{createAt}</p>
-                        <p>{text}</p>
+                        {text}
                         </div>
                     </div>
                 ))}

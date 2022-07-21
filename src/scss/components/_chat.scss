@@ -16,9 +16,14 @@
     gap: .6rem;
     overflow-y: scroll;
     @include scrollbars(.3em, $color-mid-blue);
-    &-data{
+    &-data-received{
       font-size: 1.2rem;
-      padding-bottom: .6rem;
+      padding-bottom: .2rem;
+    }
+    &-data-sent{
+      font-size: 1.2rem;
+      text-align: end;
+      padding-bottom: .2rem;
     }
     }
   &-msg {
