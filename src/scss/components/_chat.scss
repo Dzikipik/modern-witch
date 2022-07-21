@@ -16,26 +16,32 @@
     gap: .6rem;
     overflow-y: scroll;
     @include scrollbars(.3em, $color-mid-blue);
+    &-data{
+      font-size: 1.2rem;
+      padding-bottom: .6rem;
+    }
     }
   &-msg {
       &-sent {
         display: flex;
+        flex-direction: column;
         width: auto;
         border: .1rem solid lighten($color-dark-blue, 30%);
         background-color: $color-dark-blue;
         text-align: end;
-        padding: .5rem 1rem .5rem 1rem;
+        padding: .8rem 1rem .8rem 1.2rem;
         border-radius: 300rem 100rem 300rem 300rem;
         float: right;
       }
       &-received {
         display: flex;
+        flex-direction: column;
         width: auto;
         border: .1rem solid lighten($color-purple-warning, 30%);
-          background-color: $color-purple-warning;
-          padding: .5rem 1rem .5rem 1rem;
-          border-radius: 100rem 300rem 300rem 300rem;
-          float: left;
+        background-color: $color-purple-warning;
+        padding: .8rem 1.2rem .8rem 1rem;
+        border-radius: 100rem 300rem 300rem 300rem;
+        float: left;
       }
     }    
     
@@ -66,7 +72,7 @@
     &-msg {
         &-sent {
           border: 2px solid lighten($color-dark-blue, 30%);
-          padding: 1rem 2rem 1rem 1rem;
+          padding: 1rem 1rem 1rem 2rem;
         }
         &-received {
           border: 2px solid lighten($color-purple-warning, 30%);

@@ -14,15 +14,12 @@ const CurrentCard = ({tarot}) => {
 
 return(
     <>
-   
         <RenderTarotCard />
-    
-    <div className="currentCard">
-    
-            <h2>{name}</h2>
-            <p>{meaningUp}</p>
-            <p>{meaningRev}</p>
-    </div>
+        <div className="currentCard">
+                <h2>{name}</h2>
+                <p>{meaningUp}</p>
+                <p>{meaningRev}</p>
+        </div>
     </>
 )
 }

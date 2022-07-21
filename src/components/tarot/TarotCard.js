@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../dataBase/firebase";
 import CurrentCard from "./CurrentCard"
-import Loader from "../weather/Loader";
+import Loader from "../Loader";
 // import TarotCards from "./cards"
 
 const TarotCard = () => {
@@ -30,7 +30,7 @@ const TarotCard = () => {
           if(response.ok){
             return response
           }
-          setLoading(false);
+          setLoading(true);
           setError(false)
         })
         .then(response => response.json())

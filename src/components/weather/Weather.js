@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CurrentDay from "./CurrentDay";
-import Loader from "./Loader";
+import Loader from "../Loader";
 
 const Weather = () => {
   const [data, setData] = useState({

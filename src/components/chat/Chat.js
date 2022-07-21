@@ -17,12 +17,18 @@ export default function Chat() {
         const q = query(collectionRef, orderBy("createAt", "desc"), limit(20));
 
         const unsub = onSnapshot(q, (snapshot) => 
-        setMessages(snapshot.docs.map((doc) => ({...doc.data(), id:doc.id})))
+        setMessages(snapshot.docs.map((doc) => ({
+            ...doc.data(), 
+            id:doc.id,
+            createAt: doc.data().createAt.toDate().toDateString()
+        })))
+        
         )
         return unsub
+        
     }, []);
 
-
+    console.log(messages)
     return (
 
         <div className="chat">
@@ -31,10 +37,10 @@ export default function Chat() {
                 <p>chat</p>
             </div>
             <div className="chat-messages">
-                {messages.map(({id, text, photoURL, uid}) => (
+                {messages.map(({id, text, photoURL, uid, createAt}) => (
                     <div key={id}>
                         <div className={`${uid === auth.currentUser.uid ? 'chat-msg-sent' : 'chat-msg-received'}`}>
-                        <img src={photoURL} alt="" />
+                        <p className="chat-messages-data">{createAt}</p>
                         <p>{text}</p>
                         </div>
                     </div>
